@@ -4,40 +4,76 @@
   margin: 0;
 }
 
+/* variables */
+:root {
+  /* colors */
+  --blue1: rgb(0, 72, 114);
+  --blue2: blue;
+  --white: white;
+
+  /* fonts */
+  --courier: "Courier New", Courier, monospace;
+
+  /* spacing */
+  --spacing-unit-tiny: 6px;
+  --spacing-unit-small: 12px;
+  --spacing-unit: 24px;
+  --spacing-unit-large: 48px;
+}
+
 body {
   background-color: #d9dcd6;
-  background-image: url(https://c.pxhere.com/photos/47/fa/grass_sun_morning_tree_sunrise-99190.jpg!d);
+  background-image: url(https://c.pxhere.com/photos/86/b0/background_blue_gradient-1201694.jpg!d);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 /* header */
 
 header {
   padding: 20px;
+  margin: 60px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   background-color: #0072bb;
-  color: #ffffff;
-  display: block;
+  background-image: url(https://c.pxhere.com/photos/64/e6/chicago_usa_america_united_states_city_skyscrapers_ocean_building-744301.jpg!d);
+  background-size: cover;
+  color: #030c8f;
 }
 
 header h1 {
-  display: inline-block;
+  display: flex;
   font-size: 48px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 header nav {
-  padding-top: 15px;
-  margin-right: 20px;
+  padding: 15px;
+  margin: 20px;
   float: right;
   font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
     sans-serif;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 header nav ul li {
-  display: inline-block;
+  display: flex;
   margin-left: 25px;
   font-weight: bolder;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+header img {
+  display:flex;
+  float:left;
+  justify-content: left;
+  align-content:center;
+  max-height: 300px;
 }
 
 a {
@@ -46,7 +82,8 @@ a {
 }
 
 a:hover {
-  color: #d6ffd8;
+  color: #0075fc;
+  background-color: #ffffff;
 }
 
 p {
@@ -56,15 +93,65 @@ p {
 /* main */
 
 main {
-  width: 75%;
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
   margin-left: 20px;
+  flex-grow: 1;
+  justify-content:center;
+}
+
+figure {
+  border: 4px dashed orange;
+  margin: var(--spacing-unit-small);
+  padding: var(--spacing-unit);
+  position: relative;
+  transition: all 0.1s ease-in-out;
+  max-width: 350px;
+  border-radius: 50px;
+}
+
+figure:hover {
+  box-shadow: inset 0px 0px 12px orange, 0px 0px 12px orange;
+}
+
+h2 {
+  background-color: var(--blue2);
+  color: var(--white);
+  top: -22px;
+  left: 50%;
+  padding: var(--spacing-unit-tiny);
+  position: absolute;
+  text-align: center;
+  transform: translate(-50%);
+  border-radius: 20px;
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+section img {
+  opacity: 0.8;
+}
+
+/* classes */
+/*.figure-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}*/
+
+.figure-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-columns:100vw;
+  grid-template-rows: 100vh;
+  justify-content: center;
+  align-content: center;
 }
 
 .content {
   margin-bottom: 20px;
   padding: 50px;
-  height: 300px;
+  height: 375px;
   font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
     sans-serif;
   background-color: #0072bb;
@@ -72,50 +159,27 @@ main {
 }
 
 .content img {
-  max-height: 200px;
-  margin-right: 50px;
-}
-
-.content h2 {
-  margin-bottom: 20px;
-  font-size: 36px;
-}
-
-/* benefits section */
-
-benefits {
-  margin-right: 20px;
-  padding: 20px;
-  clear: both;
-  float: right;
-  width: 20%;
-  height: 100%;
-  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
-    sans-serif;
-  background-color: #0072bb;
-}
-
-.benefits-content {
-  margin-bottom: 32px;
-  color: #ffffff;
-}
-
-.benefits-content h3 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.benefits-content img {
-  display: block;
-  margin: 10px auto;
-  max-width: 150px;
+  max-height: 170px;
+  max-width: 250px;
+  margin-block: 50px;
 }
 
 /* atomic classes */
 
 .d-f {
   display: flex;
+}
+
+.fw-w {
+  flex-wrap: wrap;
+}
+
+.ta-c {
+  text-align: center;
+}
+
+.m {
+  margin: 24px;
 }
 
 /* footer */
@@ -128,6 +192,20 @@ footer {
   text-align: center;
 }
 
-footer h2 {
+footer h3 {
   font-size: 20px;
+}
+
+/* media queries */
+/* medium > 768px */
+@media screen and (min-width: 790px) {
+  .figure-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .figure-wrapper {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
