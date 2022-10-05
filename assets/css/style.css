@@ -1,3 +1,133 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #d9dcd6;
+  background-image: url(https://c.pxhere.com/photos/47/fa/grass_sun_morning_tree_sunrise-99190.jpg!d);
+}
+
+/* header */
+
+header {
+  padding: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-color: #0072bb;
+  color: #ffffff;
+  display: block;
+}
+
+header h1 {
+  display: inline-block;
+  font-size: 48px;
+}
+
+header nav {
+  padding-top: 15px;
+  margin-right: 20px;
+  float: right;
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+    sans-serif;
+  font-size: 20px;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin-left: 25px;
+  font-weight: bolder;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #d6ffd8;
+}
+
+p {
+  font-size: 20px;
+}
+
+/* main */
+
+main {
+  width: 75%;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.content {
+  margin-bottom: 20px;
+  padding: 50px;
+  height: 300px;
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+    sans-serif;
+  background-color: #0072bb;
+  color: #ffffff;
+}
+
+.content img {
+  max-height: 200px;
+  margin-right: 50px;
+}
+
+.content h2 {
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+/* benefits section */
+
+benefits {
+  margin-right: 20px;
+  padding: 20px;
+  clear: both;
+  float: right;
+  width: 20%;
+  height: 100%;
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+    sans-serif;
+  background-color: #0072bb;
+}
+
+.benefits-content {
+  margin-bottom: 32px;
+  color: #ffffff;
+}
+
+.benefits-content h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.benefits-content img {
+  display: block;
+  margin: 10px auto;
+  max-width: 150px;
+}
+
+/* atomic classes */
+
 .d-f {
-    display:flex;
+  display: flex;
+}
+
+/* footer */
+
+footer {
+  padding: 30px;
+  clear: both;
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+    sans-serif;
+  text-align: center;
+}
+
+footer h2 {
+  font-size: 20px;
 }
