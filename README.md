@@ -35,6 +35,8 @@ THEN I am presented with a responsive layout that adapts to my viewport
 ```
 ---
 
+# [Here is a link to the deployed website](https://ckim812.github.io/portfolio/)
+
 ## Application Preview
 
 ![alt text](./assets/img/portfolio%20preview.png)
