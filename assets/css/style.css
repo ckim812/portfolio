@@ -69,21 +69,28 @@ header nav ul li {
 }
 
 header img {
-  display:flex;
-  float:left;
+  display: flex;
+  float: left;
   justify-content: left;
-  align-content:center;
+  align-content: center;
   max-height: 300px;
 }
 
 a {
   color: #ffffff;
   text-decoration: underline;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 a:hover {
   color: #0075fc;
   background-color: #ffffff;
+}
+
+figure a:hover {
+  box-shadow: inset 0px 0px 12px orange, 0px 0px 12px orange;
 }
 
 p {
@@ -97,7 +104,7 @@ main {
   flex-wrap: wrap;
   margin-left: 20px;
   flex-grow: 1;
-  justify-content:center;
+  justify-content: center;
 }
 
 figure {
@@ -106,12 +113,18 @@ figure {
   padding: var(--spacing-unit);
   position: relative;
   transition: all 0.1s ease-in-out;
-  max-width: 350px;
+  /* max-width: 350px; */
   border-radius: 50px;
 }
 
 figure:hover {
   box-shadow: inset 0px 0px 12px orange, 0px 0px 12px orange;
+}
+
+figcaption {
+display: flex;
+justify-content: center;
+margin: 15px;
 }
 
 h2 {
@@ -140,10 +153,13 @@ section img {
 }*/
 
 .figure-wrapper {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr;
   grid-template-columns:100vw;
-  grid-template-rows: 100vh;
+  grid-template-rows: 100vh; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   justify-content: center;
   align-content: center;
 }
@@ -151,23 +167,50 @@ section img {
 .content {
   margin-bottom: 20px;
   padding: 50px;
-  height: 375px;
+  height:500px;
   font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
     sans-serif;
   background-color: #0072bb;
   color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 
 .content img {
-  max-height: 170px;
-  max-width: 250px;
-  margin-block: 50px;
+  display: flex;
+  height: 300px;
+  width: 300px;
+  object-fit: contain;
+    /* margin-block: 50px; */
 }
+
+/* id classes */
+
+#about-me {
+  height: 800px;
+}
+
+#work {
+  height: 1000px;
+}
+
+#project-1-picture {
+  height: 500px;
+  width: 500px;
+  object-fit: contain;
+}
+
 
 /* atomic classes */
 
 .d-f {
   display: flex;
+}
+
+.d-b {
+  display: block;
 }
 
 .fw-w {
@@ -180,6 +223,10 @@ section img {
 
 .m {
   margin: 24px;
+}
+
+.fd-r {
+  flex-direction: row;
 }
 
 /* footer */
@@ -198,14 +245,30 @@ footer h3 {
 
 /* media queries */
 /* medium > 768px */
-@media screen and (min-width: 790px) {
-  .figure-wrapper {
+@media screen and (min-width: 975px) {
+  /* .figure-wrapper {
     grid-template-columns: 1fr 1fr;
+  } */
+    #work {
+    height: 750px;
+  }
+
+  #work-images {
+    display: flex;
+    flex-direction: row;
   }
 }
 
-@media screen and (min-width: 1500px) {
-  .figure-wrapper {
+@media screen and (min-width: 770px) {
+  /* .figure-wrapper {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  } */
+  #about-me {
+    height: 600px;
+  }
+
+  #about-me-images {
+    display: flex;
+    flex-direction: row;
   }
 }
