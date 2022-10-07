@@ -7,8 +7,8 @@
 /* variables */
 :root {
   /* colors */
-  --blue1: rgb(0, 72, 114);
-  --blue2: blue;
+  --blue1: rgb(0, 247, 255);
+  --blue2: #030c8f;
   --white: white;
 
   /* fonts */
@@ -21,8 +21,9 @@
   --spacing-unit-large: 48px;
 }
 
+/* body styling */
+
 body {
-  background-color: #d9dcd6;
   background-image: url("../img/background_blue_gradient-1201694.jpg");
   background-size: cover;
   display: flex;
@@ -37,10 +38,10 @@ header {
   margin: 60px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  background-color: #0072bb;
+  background-color: var(--blue1);
   background-image: url("../img/chicago_usa_america_united_states_city_skyscrapers_ocean_building-744301.jpg");
   background-size: cover;
-  color: #030c8f;
+  color: var(--blue2);
 }
 
 header h1 {
@@ -77,20 +78,24 @@ header img {
 }
 
 a {
-  color: #ffffff;
-  text-decoration: underline;
+  color: var(--blue2);
   display: flex;
   justify-content: center;
   align-content: center;
 }
-
-a:hover {
-  color: #0075fc;
-  background-color: #ffffff;
+a img {
+  max-width: fit-content;
+  border-width: 3px;
+  border-style: solid;
 }
 
-figure a:hover {
-  box-shadow: inset 0px 0px 12px orange, 0px 0px 12px orange;
+a:hover {
+  color: var(--blue1);
+  box-shadow: inset 0px 0px 12px var(--white), 0px 0px 12px var(--white);
+}
+
+a img:hover {
+  box-shadow: inset 0px 0px 12px var(--white), 0px 0px 12px var(--white);
 }
 
 p {
@@ -110,7 +115,7 @@ main {
 /* figure styling */
 
 figure {
-  border: 4px dashed orange;
+  border: 4px dashed var(--white);
   margin: var(--spacing-unit-small);
   padding: var(--spacing-unit);
   position: relative;
@@ -119,7 +124,7 @@ figure {
 }
 
 figure:hover {
-  box-shadow: inset 0px 0px 12px orange, 0px 0px 12px orange;
+  box-shadow: inset 0px 0px 12px var(--white), 0px 0px 12px var(--white);
 }
 
 figcaption {
@@ -142,9 +147,9 @@ h2 {
   font-size: 36px;
 }
 
-section img {
+/* section img {
   opacity: 0.8;
-}
+} */
 
 /* classes */
 
@@ -152,8 +157,8 @@ section img {
   display: flex;
   flex-direction: column;
   width: 100%;
-  justify-content: center;
-  align-content: center;
+  /* justify-content: center;
+  align-content: center; */
 }
 
 .content {
@@ -166,17 +171,38 @@ section img {
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
+  /* justify-content: center;
+  align-content: center; */
+  align-items: center;
 }
 
 .content img {
   display: flex;
-  height: 300px;
-  width: 300px;
+  max-width: 40vw;
   object-fit: contain;
-  margin: 20px;
+  margin: 5px;
   flex-wrap: wrap;
+}
+
+.project1Picture {
+  min-width: 75vw;
+}
+
+/* Container holding the image and the text */
+.container {
+  position: relative;
+  text-align: center;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 40px;
+  left: 8px;
+  background-color: var(--blue1);
+  color: var(--blue2);
+  font-size: 48px;
+  font-weight: 900;
 }
 
 /* id classes */
@@ -187,12 +213,8 @@ section img {
 
 #work-images {
   justify-content: center;
-}
-
-#project-1-picture {
-  height: 500px;
-  width: 500px;
-  object-fit: contain;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* atomic classes */
@@ -238,7 +260,7 @@ footer h3 {
 /* media queries */
 /* medium > 768px */
 @media screen and (min-width: 975px) {
-   #work-images {
+  #work-images {
     display: flex;
     flex-direction: row;
   }
